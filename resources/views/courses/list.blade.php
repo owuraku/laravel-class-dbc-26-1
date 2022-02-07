@@ -3,6 +3,9 @@
 @section('page_title', 'List of courses')
 
 @section('content')
+<div>
+    <a href="/courses/add" class="btn btn-primary">Add Course</a>
+</div>
   <table class="table">
   <thead>
     <tr>

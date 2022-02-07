@@ -27,12 +27,19 @@ class CourseController extends Controller
     }
 
     public function saveCourse(Request $request){
+
+        $request->validate([
+            'name' => 'required|min:10|max:100|unique:courses,name',
+            'course_id' => 'required|min:6|max:20|unique:courses,course_id',
+            'duration'=> 'required|max:30'
+        ]);
+
         $newCourse = new Course;
         $newCourse->name = $request->input('name');
         $newCourse->duration = $request->input('duration');
         $newCourse->course_id = $request->input('course_id');
         $newCourse->save();
-
+         session()->flash('alert', $newCourse->name. ' created successfully');
         // $data = $request->all();
         // unset($data['_token']);
         // Course::create($data);
@@ -46,7 +53,7 @@ class CourseController extends Controller
         $course->duration = $request->input('duration');
         $course->course_id = $request->input('course_id');
         $course->save();
-
+        session()->flash('alert', $course->name. ' updated successfully');
         return redirect('/courses');
     }
 }
