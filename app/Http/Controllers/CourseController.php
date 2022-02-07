@@ -31,7 +31,7 @@ class CourseController extends Controller
         $request->validate([
             'name' => 'required|min:10|max:100|unique:courses,name',
             'course_id' => 'required|min:6|max:20|unique:courses,course_id',
-            'duration'=> 'required|max:30'
+            'duration'=> 'required|max:35'
         ]);
 
         $newCourse = new Course;
