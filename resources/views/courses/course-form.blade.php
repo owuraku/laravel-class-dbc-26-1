@@ -52,6 +52,18 @@
     @enderror
 </div>
 
+<div class="mb-3">
+    Select Programme(s)
+@foreach ($programmes as $programme)
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="{{$programme->id}}" name="programmes[]">
+    <label class="form-check-label" for="programmes">
+    {{$programme->name}} ({{$programme->programme_id}})
+    </label>
+    </div>
+@endforeach
+</div>
+
   <button type="submit" class="btn btn-primary ">Submit</button>
 </form>
 @endsection

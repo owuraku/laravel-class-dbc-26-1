@@ -7,10 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+    use HasFactory;
 
     protected $fillable = [
         'name', 'course_id', 'duration'
     ];
 
-    use HasFactory;
+    public function programmes(){
+        return $this->belongsToMany(Programme::class);
+    }
+
 }
