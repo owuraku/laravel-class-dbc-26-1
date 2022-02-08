@@ -14,7 +14,9 @@ Route::get('/courses', [CourseController::class, 'showAllCourses']);
 Route::get('/courses/add', [CourseController::class, 'showAddCoursePage']);
 Route::get('/courses/{id}/edit', [CourseController::class, 'showEditCoursePage'])->name('updateCourse');
 Route::post('/courses', [CourseController::class, 'saveCourse']);
-Route::patch('/courses', [CourseController::class, 'updateCourse']);
+Route::put('/courses', [CourseController::class, 'updateCourse']);
+Route::delete('/courses', [CourseController::class, 'deleteCourse']);
+
 
 
 
