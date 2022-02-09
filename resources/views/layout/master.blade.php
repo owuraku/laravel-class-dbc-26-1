@@ -43,7 +43,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" aria-current="page" href="/students">Students</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/courses">Courses</a>
@@ -51,9 +51,7 @@
            <li class="nav-item">
             <a class="nav-link" href="/programmes">Programmes</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
+
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

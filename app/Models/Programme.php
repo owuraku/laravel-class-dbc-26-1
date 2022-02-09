@@ -12,4 +12,8 @@ class Programme extends Model
     public function courses(){
         return $this->belongsToMany(Course::class);
     }
+
+    public function registeredStudents(){
+        return $this->hasMany(Student::class);
+    }
 }

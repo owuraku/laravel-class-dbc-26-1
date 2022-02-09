@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProgrammeController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,5 +29,17 @@ Route::get('/programmes/add', [ProgrammeController::class, 'showAddProgrammePage
 Route::get('/programmes/{id}', [ProgrammeController::class, 'showOneProgramme'])->name('viewProgramme');
 Route::post('/programmes', [ProgrammeController::class, 'saveProgramme']);
 
+
+Route::prefix('/students')->group(function(){
+    Route::get('/', [StudentController::class, 'showAllStudents']);
+    Route::get('/{id}', [StudentController::class, 'showAllStudents'])->name('viewStudent');
+
+    Route::post('/', [StudentController::class, 'showAllStudents']);
+    Route::put('/', [StudentController::class, 'showAllStudents'])->name('updateStudent');
+    Route::patch('/', [StudentController::class, 'showAllStudents']);
+
+
+
+});
 
 
