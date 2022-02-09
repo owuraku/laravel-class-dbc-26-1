@@ -17,6 +17,12 @@ class CourseController extends Controller
                 ->with('courses', $allCourses);
     }
 
+     public function showOneCourse($id){
+          $course = Course::findOrFail($id);
+           return view('courses.show')
+         ->with('course', $course);
+     }
+
     public function showAddCoursePage(){
         $allProgrammes = Programme::all();
 

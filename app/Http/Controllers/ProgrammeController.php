@@ -16,6 +16,13 @@ class ProgrammeController extends Controller
                 ->with('programmes', $allProgrammes);
     }
 
+    public function showOneProgramme($id){
+          $programme = Programme::findOrFail($id);
+        // return view('courses.list', ['courses' => $allCourses]);
+        return view('programmes.show')
+                ->with('programme', $programme);
+    }
+
     public function showAddProgrammePage(){
         return view('programmes.programme-form');
     }

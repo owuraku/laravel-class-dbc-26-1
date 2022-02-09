@@ -24,7 +24,7 @@
         <td>{{$course->duration}} day(s)</td>
         <td>
             @foreach ($course->programmes as $programme)
-                {{ $programme->name }},
+                <a href="{{route('viewProgramme',['id'=>$programme->id])}}">{{ $programme->name }}</a>
             @endforeach
         </td>
         <td>

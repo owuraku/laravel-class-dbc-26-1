@@ -56,7 +56,8 @@
     Select Programme(s)
 @foreach ($programmes as $programme)
     <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="{{$programme->id}}" name="programmes[]">
+    <input class="form-check-input" type="checkbox" value="{{$programme->id}}" name="programmes[]"
+    @if($course->programmes->contains($programme)) checked @endif>
     <label class="form-check-label" for="programmes">
     {{$programme->name}} ({{$programme->programme_id}})
     </label>
