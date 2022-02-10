@@ -4,7 +4,9 @@
 
 @section('content')
 <div>
-    <a href="/courses/add" class="btn btn-primary">Add Course</a>
+    <a
+    href="{{route('createCourse')}}"
+    class="btn btn-primary">Add Course</a>
 </div>
   <table class="table">
   <thead>

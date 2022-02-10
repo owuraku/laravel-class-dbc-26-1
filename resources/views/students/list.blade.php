@@ -24,10 +24,10 @@
         <td>
             <td>
             <a type="button"
-            href="{{route('updateStudent', ['id' => $student->id])}}"
+            href="{{route('showEditStudentPage', ['id' => $student->id])}}"
             class="btn btn-primary">Edit</a>
             <a type="button"
-            href="{{route('viewStudent', ['id' => $student->id])}}"
+            href="{{route('showStudentDetails', ['id' => $student->id])}}"
             class="btn btn-secondary">View</a>
 
             <button type="button"
