@@ -22,4 +22,5 @@
       @endforeach
   </tbody>
 </table>
+{{$programmes->links()}}
 @endsection

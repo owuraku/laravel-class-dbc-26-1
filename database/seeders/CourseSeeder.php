@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Course;
 use App\Models\Programme;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class CourseSeeder extends Seeder
 {
@@ -16,12 +17,16 @@ class CourseSeeder extends Seeder
     public function run()
     {
         //
-        $programme = Programme::find(1);
-        $course = new Course();
-        $course->name = "Laravel Essentials";
-        $course->duration = 15;
-        $course->course_id = 'LAV100';
-        $course->save();
-        $course->programmes()->attach($programme);
+        for ($i=0; $i < 200; $i++) {
+            $faker = Faker::create();
+            $coursename = $faker->word();
+            $course = new Course();
+            $course->name =ucfirst($coursename). " ".$faker->word()." ".$i;
+            $course->duration = $faker->numberBetween(10, 30);
+            $course->course_id = $faker->numerify(ucwords($coursename)."###");
+            $course->save();
+            $course->programmes()->attach($faker->numberBetween(1,400));
+        }
+
     }
 }

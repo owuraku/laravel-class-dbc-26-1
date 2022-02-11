@@ -10,7 +10,7 @@ class ProgrammeController extends Controller
     //
 
      public function showAllProgrammes() {
-       $allProgrammes = Programme::all();
+       $allProgrammes = Programme::paginate(10);
         // return view('courses.list', ['courses' => $allCourses]);
         return view('programmes.list')
                 ->with('programmes', $allProgrammes);
