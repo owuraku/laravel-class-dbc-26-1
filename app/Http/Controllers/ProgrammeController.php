@@ -9,8 +9,16 @@ class ProgrammeController extends Controller
 {
     //
 
-     public function showAllProgrammes() {
-       $allProgrammes = Programme::paginate(10);
+     public function showAllProgrammes(Request $request) {
+       $searchTerm = $request->query('search');
+        if($searchTerm == null){
+            $allProgrammes = Programme::paginate(10);
+        } else {
+             $allProgrammes = Programme::where('name','like', "%{$searchTerm}%")
+             ->orWhere('programme_id','like', "%{$searchTerm}%")->paginate(10);
+        }
+
+
         // return view('courses.list', ['courses' => $allCourses]);
         return view('programmes.list')
                 ->with('programmes', $allProgrammes);

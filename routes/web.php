@@ -24,7 +24,7 @@ Route::delete('/courses', [CourseController::class, 'deleteCourse']);
 
 
 // Programmes
-Route::get('/programmes', [ProgrammeController::class, 'showAllProgrammes']);
+Route::get('/programmes', [ProgrammeController::class, 'showAllProgrammes'])->name('showAllProgrammes');
 Route::get('/programmes/add', [ProgrammeController::class, 'showAddProgrammePage']);
 Route::get('/programmes/{id}', [ProgrammeController::class, 'showOneProgramme'])->name('viewProgramme');
 Route::post('/programmes', [ProgrammeController::class, 'saveProgramme']);
